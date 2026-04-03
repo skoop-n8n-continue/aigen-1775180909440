@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="manifest" href="./manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel In-Room Display</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="styles.css?v=hotel7">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Background Overlay -->
+        <div class="background-overlay"></div>
+        <div class="background-image" style="background-image: url('https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1775179028822%2Fassets%2Fluxury_hotel_lobby-1775179118481.png');"></div>
+
+        <!-- Sidebar Navigation (Visual Only) -->
+        <nav class="sidebar">
+            <div class="logo">LUXE</div>
+            <div class="nav-items">
+                <div class="nav-item active" data-section="welcome">Home</div>
+                <div class="nav-item" data-section="tv-guide">TV Guide</div>
+                <div class="nav-item" data-section="dining">Dining</div>
+                <div class="nav-item" data-section="activities">Explore</div>
+                <div class="nav-item" data-section="service">Service</div>
+            </div>
+            <div class="clock-container">
+                <div id="current-time" class="time">12:00</div>
+                <div id="current-date" class="date">Friday, April 3</div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-wrapper">
+            <!-- Welcome Section -->
+            <section id="welcome" class="content-section active">
+                <div class="welcome-card">
+                    <h1 class="personal-welcome">Welcome, Mr. Raul Jung</h1>
+                    <p class="room-info">Suite 402 • Executive Wing</p>
+                    <div class="weather-widget" id="weather-widget">
+                        <div class="weather-main">
+                            <span class="temp">72°F</span>
+                            <span class="condition">Sunny</span>
+                        </div>
+                        <div class="weather-location">Beverly Hills, CA</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TV Guide Section -->
+            <section id="tv-guide" class="content-section">
+                <h2 class="section-title">TV Guide</h2>
+                <div class="guide-grid">
+                    <div class="guide-row header">
+                        <span>Channel</span>
+                        <span>Now Playing</span>
+                        <span>Up Next</span>
+                    </div>
+                    <div class="guide-row">
+                        <span class="channel">Luxe HD</span>
+                        <span class="show">Morning News Today</span>
+                        <span class="next">Global Market Watch</span>
+                    </div>
+                    <div class="guide-row">
+                        <span class="channel">Travel+</span>
+                        <span class="show">Wonders of Europe</span>
+                        <span class="next">Hidden Gems: Bali</span>
+                    </div>
+                    <div class="guide-row">
+                        <span class="channel">Cinema 1</span>
+                        <span class="show">The Grand Arrival</span>
+                        <span class="next">Midnight in Paris</span>
+                    </div>
+                    <div class="guide-row">
+                        <span class="channel">Sport24</span>
+                        <span class="show">Live: Tennis Open</span>
+                        <span class="next">Formula 1 Highlights</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dining Section -->
+            <section id="dining" class="content-section">
+                <h2 class="section-title">Best Restaurants Nearby</h2>
+                <div class="dining-list">
+                    <div class="dining-item">
+                        <div class="dining-info">
+                            <h3>The Gilded Terrace</h3>
+                            <p>Contemporary French Cuisine • 0.2 miles</p>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="dining-item">
+                        <div class="dining-info">
+                            <h3>Sushiro Prime</h3>
+                            <p>Authentic Edomae Sushi • 0.5 miles</p>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="dining-item">
+                        <div class="dining-info">
+                            <h3>Azure Lounge</h3>
+                            <p>Rooftop Cocktails & Tapas • In Hotel</p>
+                        </div>
+                        <div class="rating">★★★★☆</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activities Section -->
+            <section id="activities" class="content-section">
+                <h2 class="section-title">Local Attractions</h2>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h3>Rodeo Drive</h3>
+                        <p>Luxury shopping and iconic landmarks within walking distance.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h3>Getty Center</h3>
+                        <p>World-class art and stunning architecture overlooking the city.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h3>Santa Monica Pier</h3>
+                        <p>Classic oceanfront entertainment and sunset views.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Room Service Section -->
+            <section id="service" class="content-section">
+                <div class="service-flex">
+                    <div class="service-text">
+                        <h2 class="section-title">Room Service</h2>
+                        <p class="service-desc">Enjoy gourmet dining in the comfort of your suite. Our kitchen is open 24/7 for your convenience.</p>
+                        <div class="menu-highlight">
+                            <h3>Chef's Breakfast Special</h3>
+                            <p>Farm-fresh eggs, artisanal pastries, and freshly squeezed juice.</p>
+                        </div>
+                        <div class="cta-message">Dial 0 from your room phone to order</div>
+                    </div>
+                    <div class="service-image" style="background-image: url('https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1775179028822%2Fassets%2Fgourmet_room_service-1775179141160.png');"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Ticker (Personalized/Live feel) -->
+        <footer class="ticker-container">
+            <div class="ticker-content">
+                <span class="ticker-item">✨ Welcome to your home away from home.</span>
+                <span class="ticker-item">📅 Tonight at 8PM: Piano Performance in the Lobby Lounge.</span>
+                <span class="ticker-item">🏊 Pool Deck is open from 6AM to 10PM daily.</span>
+                <span class="ticker-item">💆 Visit the Spa on Level 3 for personalized wellness treatments.</span>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js?v=hotel7"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js')
+          .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
+          .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
+      });
+    }
+  </script>
+</body>
+</html>
